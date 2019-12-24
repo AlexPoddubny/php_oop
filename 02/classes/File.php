@@ -22,8 +22,9 @@
 		{
 			if (fwrite($this->handle, $text) === FALSE) {
 				echo "Не могу произвести запись в файл ($this->fname)";
-				exit;
+				return false;
 			}
+			return true;
 		}
 		
 		public function __destruct()
