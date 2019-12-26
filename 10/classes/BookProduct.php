@@ -3,6 +3,8 @@
 	namespace classes;
 	
 	
+	use classes\interfaces\I3D;
+	
 	class BookProduct
 	extends Product
 	implements I3D
