@@ -20,7 +20,7 @@
 		
 		public function write($text)
 		{
-			if (fwrite($this->handle, $text) === FALSE) {
+			if (fwrite($this->handle, $text . PHP_EOL) === FALSE) {
 				echo "Не могу произвести запись в файл ($this->fname)";
 				exit;
 			}

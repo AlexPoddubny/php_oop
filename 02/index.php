@@ -9,3 +9,4 @@
 	$file = new File('test.txt');
 	$file->write('text');
 	debug($file);
+	echo $file->content;
