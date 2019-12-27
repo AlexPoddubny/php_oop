@@ -1,22 +1,12 @@
 <?php
 	
-	use classes\{BookProduct, NotebookProduct};
-	use classes\interfaces\IGadget;
+	use app\{BookProduct, NotebookProduct};
+	use wfm\interfaces\IGadget;
 	use PHPMailer\PHPMailer\PHPMailer;
 	
 	error_reporting(-1);
-	
-	
-	function autoloader($class)
-	{
-		echo $class . '<br>';
-		$file = __DIR__ . '/' . str_replace('\\', '/', $class) . '.php';
-		if (file_exists($file)) {
-			require_once $file;
-		}
-	}
-	
-	spl_autoload_register('autoloader');
+
+	require_once __DIR__ . '/vendor/autoload.php';
 	
 	function debug($data)
 	{
@@ -30,13 +20,6 @@
 	
 	$book = new BookProduct('Три мушкетера', 20, 1000);
 	$notebook = new NotebookProduct('Dell', 1000, 'Intel');
-	
-	offerCase($notebook);
+	echo $book->name;
 	
 	debug($book);
-	debug($notebook);
-	echo $book->getProduct();
-	echo $notebook->getProduct();
-	
-	$mail = new PHPMailer();
-	debug($mail);
